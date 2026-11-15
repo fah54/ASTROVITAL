@@ -57,13 +57,14 @@ def assess_health(heart_rate, spo2, temperature,
         risk_level = "WITHIN DEMO RULES"
 
     if not recommendations:
-        recommendations.append("Continue routine monitoring under the mission's approved procedures.")
-   return {
-    "status": risk_level,
-    "alerts": issues,
-    "recommendations": recommendations,
+        recommendations.append(
+            "Continue routine monitoring under the mission's approved procedures."
+        )
 
-    # Keep the original keys for compatibility
-    "risk_level": risk_level,
-    "issues": issues
-}
+    return {
+        "status": risk_level,
+        "alerts": issues,
+        "recommendations": recommendations,
+        "risk_level": risk_level,
+        "issues": issues
+    }
