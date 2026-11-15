@@ -26,4 +26,12 @@ def assess_health(heart_rate, spo2, temperature, sleep_hours, stress, fatigue):
     status = "Attention" if vital_alert else ("Monitor" if alerts else "Within demo rules")
     if not recommendations:
         recommendations.append("Continue routine monitoring under the mission's approved procedures.")
-    return {"status": status, "alerts": alerts, "recommendations": recommendations}
+   return {
+    "status": risk_level,
+    "alerts": issues,
+    "recommendations": recommendations,
+
+    # Keep the original keys for compatibility
+    "risk_level": risk_level,
+    "issues": issues
+}
